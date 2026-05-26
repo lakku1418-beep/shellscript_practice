@@ -3,6 +3,6 @@ echo "enter username"
 read USERNAME
 echo "username is $USERNAME"
 echo "enter password"
-read PASSWORD
+read -s PASSWORD
 echo "password is $PASSWORD"
 
