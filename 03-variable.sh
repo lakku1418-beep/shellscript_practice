@@ -4,5 +4,5 @@ read USERNAME
 echo "username is $USERNAME"
 echo "enter password"
 read -s PASSWORD
-echo "password is -s $PASSWORD"
+echo -s "password is $PASSWORD"
 
