@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "enter number"
+read number
+
+if[$number%2 -eq 0]; then
+   echo "$number is even
