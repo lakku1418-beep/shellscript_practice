@@ -2,7 +2,7 @@
 echo "enter today of the week"
 read today
 
-if [ "$today" -ne "sunday" ] && [ "$today" -ne "saturday" ]; then
+if [ "$today" != "sunday" ] && [ "$today" != "saturday" ]; then
 
     echo "$today is a holiday enjoy your day"
 else
