@@ -7,19 +7,24 @@ if [ $USERID -ne 0 ]; then
  echo "Error: This command has to be run with superuser privileges (under the root user on most systems)"
     exit 1  
 fi
+print_header() 
+        {
+        echo "===================================================="
+        echo "$1"
+        echo "===================================================="     
+        }
 
-dnf list installed $package_name
+    dnf list installed $package_name
     if [ $? -eq 0 ]; then
-        echo "$package_name already installed"
-     else
-        echo " installing $package_name"
-
+         echo "$package_name already installed"
+      else
+        print_header "installing $package_name"
         dnf install $package_name -y
       if  [ $? -eq 0 ]; then
 
-        echo "installing $package_name ..... SUCCESS"
+           echo "installing $package_name ..... SUCCESS"
         else
-        echo "installing $package_name ..... FAILED"
+           echo "installing $package_name ..... FAILED"
       fi
     fi
 
