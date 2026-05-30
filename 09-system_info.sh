@@ -28,8 +28,8 @@ wait
 echo "script completed time : $SECONDS seconds"
 
 
-sh $0 &>> $LOG_FILE
-exit 1
+#sh $0 &>> $LOG_FILE
+
 
 
 
