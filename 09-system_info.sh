@@ -12,7 +12,7 @@ section() {
 
 
 }
-section "System Info report for $SERVER_NAME"
+section "System Info report for $SERVER_NAME" 
 echo " script PID     : $$"
 echo " started at     : $(date)"
 echo " user           : $USER"
@@ -26,5 +26,5 @@ sleep 5 &
 wait    
 echo "script completed time : $SECONDS seconds"
 
-$0 &>> $LOG_FILE
+echo "System Info report for $SERVER_NAME" &>> $LOG_FILE
 
