@@ -29,6 +29,6 @@ echo "script completed time : $SECONDS seconds"
 section "System Info report for $SERVER_NAME" 
 
 
-echo "System Info report for $SERVER_NAME" > $LOG_FILE
+sh $0 &>> $LOG_FILE
 
 
