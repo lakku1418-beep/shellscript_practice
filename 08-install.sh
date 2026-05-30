@@ -9,18 +9,18 @@ if [ $USERID -ne 0 ]; then
 fi
 
 dnf list installed $package_name
- if [ $? -eq 0 ]; then
-   echo "$package_name already installed"
-   exit 1
-    
- fi
-   echo " installing $package_name"
-   dnf install $package_name -y
-  if  [ $? -eq 0 ]; then
+    if [ $? -eq 0 ]; then
+        echo "$package_name already installed"
+     else
+        echo " installing $package_name"
 
-    echo "installing $package_name ..... SUCCESS"
-    else
-    echo "installing $package_name ..... FAILED"
- fi
+        dnf install $package_name -y
+      if  [ $? -eq 0 ]; then
+
+        echo "installing $package_name ..... SUCCESS"
+        else
+        echo "installing $package_name ..... FAILED"
+      fi
+    fi
 
 
