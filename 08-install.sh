@@ -1,9 +1,11 @@
 #!/bin/bash
 package_name=$1
+
 user_id=$(id -u)
 
+
 if [ $? -ne 0 ]; then
- echo " permissions denined to exceute the script"
+ echo "Error: This command has to be run with superuser privileges (under the root user on most systems)"
     exit 1  
 fi
 dnf list installed $package_name
