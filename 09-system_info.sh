@@ -1,6 +1,6 @@
 #!/bin/bash
 SERVER_NAME=webserver01
-OS_NAME=$(cat /etc/os-release | grep PRETTY_NAME | cut -d '"' -f 2 )
+OS_NAME=$(cat /etc/os-release | grep PRETTY_NAME | cut -d '=' -f 2 )
 DISK_USAGE=$(df -h /)
 MEMORY_USAGE=$(free -h) 
 UPTIME=$(uptime)
