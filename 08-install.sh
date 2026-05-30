@@ -30,7 +30,7 @@ print_header()
       else
         print_header "installing $package_name"
 
-        dnf install $package_name -y
+        dnf install $package_name -y &>> $LOGS_FILE
         VALIDATE $package_name $?
       
     fi
