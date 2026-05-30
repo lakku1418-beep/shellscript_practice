@@ -18,9 +18,9 @@ dnf list installed $package_name
    dnf install $package_name -y
   if  [ $? -eq 0 ]; then
 
-    echo "$package_name installed successfully"
+    echo "installing $package_name ..... SUCCESS"
     else
-    echo "failed to install $package_name"
+    echo "installing $package_name ..... FAILED"
  fi
 
 
