@@ -12,12 +12,16 @@ section() {
 
 }
 section "System Info report for $SERVER_NAME"
-echo " script PID : $$"
-echo " started at : $(date)"
-echo " user : $USER"
-echo " OS : $OS_NAME"
-echo " Disk usage : $DISK_USAGE"  
-echo " Memory usage : $MEMORY_USAGE"
-echo " uptime : $UPTIME"
+echo " script PID     : $$"
+echo " started at     : $(date)"
+echo " user           : $USER"
+echo " OS             : $OS_NAME"
+echo " Disk usage   : $DISK_USAGE"  
+echo " Memory usage   : $MEMORY_USAGE"
+echo " uptime         : $UPTIME"
+
+echo "======================================="
+sleep 5 &
+wait    
 echo "script completed time : $SECONDS seconds"
 
