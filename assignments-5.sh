@@ -10,3 +10,9 @@ if [ $? -eq 0 ]; then
     else 
     echo "command failed to execute" 
 fi
+ls /tmp >output.log
+if [ $? -eq 0 ]; then
+    echo "success"
+    else
+    echo "failure"
+fi
