@@ -30,5 +30,7 @@ section "System Info report for $SERVER_NAME"
 
 
 sh $0 &>> $LOG_FILE
+exit 1
+
 
 
