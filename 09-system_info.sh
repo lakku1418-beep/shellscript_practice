@@ -1,9 +1,10 @@
 #!/bin/bash
 SERVER_NAME=webserver01
 OS_NAME=$(cat /etc/os-release | grep PRETTY_NAME | cut -d '=' -f 2 )
-DISK_USAGE=$(df -h /)
-MEMORY_USAGE=$(free -h) 
+DISK_USAGE=$(df -h / | tail -1 | awk '{print $3 "used out of " $2}')  
+MEMORY_USAGE=$(free -h | grep Mem | awk '{print $3 " used out of " $2}')
 UPTIME=$(uptime)
+LOG_FILE="/tmp/system_info.log"
 section() {
     echo "------------------------------------"   
     echo "$1"
