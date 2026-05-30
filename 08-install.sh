@@ -11,12 +11,13 @@ fi
 dnf list installed $package_name
  if [ $? -eq 0 ]; then
    echo "$package_name already installed"
-    else
-    echo " installing $package_name"
+   exit 1
+    
  fi
-dnf install $package_name -y
+   echo " installing $package_name"
+   dnf install $package_name -y
   if  [ $? -eq 0 ]; then
-  
+
     echo "$package_name installed successfully"
     else
     echo "failed to install $package_name"
