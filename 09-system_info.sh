@@ -26,8 +26,9 @@ echo "======================================="
 sleep 5 &
 wait    
 echo "script completed time : $SECONDS seconds"
-if [ $0 = 0 ]; then
-   $0 &>> $LOG_FILE
+
+if [ $? = 0 ]; then
+    $0 &>> $LOG_FILE
     echo "script executed successfully"
 else
     echo "script failed to execute"
