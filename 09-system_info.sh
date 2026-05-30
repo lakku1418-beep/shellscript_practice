@@ -1,15 +1,16 @@
 #!/bin/bash
 SERVER_NAME=webserver01
-OS_NAME=$(cat /etc/os-release | grep PRETTY_NAME | cut -d '=' -f 2 )
-DISK_USAGE=$(df -h / | tail -1 | awk '{print $3 "used out of " $2}')  
-MEMORY_USAGE=$(free -h | grep Mem | awk '{print $3 " used out of " $2}')
-UPTIME=$( uptime | awk -F "," '{print $1}')
+
 LOG_FILE="/tmp/system_info.log"
 section() {
     echo "------------------------------------"   
     echo "$1"
     echo "------------------------------------" 
-
+    
+OS_NAME=$(cat /etc/os-release | grep PRETTY_NAME | cut -d '=' -f 2 )
+DISK_USAGE=$(df -h / | tail -1 | awk '{print $3 "used out of " $2}')  
+MEMORY_USAGE=$(free -h | grep Mem | awk '{print $3 " used out of " $2}')
+UPTIME=$( uptime | awk -F "," '{print $1}')
 
 }
 section "System Info report for $SERVER_NAME" 
@@ -26,5 +27,6 @@ sleep 5 &
 wait    
 echo "script completed time : $SECONDS seconds"
 
-echo "System Info report for $SERVER_NAME" &>> $LOG_FILE
+echo "System Info report for $SERVER_NAME" > $LOG_FILE
+
 
