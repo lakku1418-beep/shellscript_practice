@@ -26,3 +26,5 @@ sleep 5 &
 wait    
 echo "script completed time : $SECONDS seconds"
 
+$0 &>> $LOG_FILE
+
