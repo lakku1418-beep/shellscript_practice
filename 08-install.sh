@@ -24,7 +24,7 @@ print_header()
             echo "===================================================="     
         }
 
-    dnf list installed $package_name
+    dnf list installed $package_name &>> $LOGS_FILE
     if [ $? -eq 0 ]; then
          echo "$package_name already installed"
       else
