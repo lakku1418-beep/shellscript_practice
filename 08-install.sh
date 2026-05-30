@@ -9,8 +9,3 @@ if [ $? -ne 0 ]; then
 fi
 
 
-    if [ $? -eq 0 ]; then
-    echo "$package_name installed successfully"
-    else
-    echo "failed to install $package_name"
-    fi
